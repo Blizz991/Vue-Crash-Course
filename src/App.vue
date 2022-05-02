@@ -2,7 +2,7 @@
   <div id="app">
     <main class="container">
       <TodoHeader />
-      <TodoTasks :tasks="tasks" />
+      <TodoTasks @delete-task="deleteTask" :tasks="tasks" />
     </main>
   </div>
 </template>
@@ -21,6 +21,13 @@ export default {
     return {
       tasks: [],
     };
+  },
+  methods: {
+    deleteTask(taskId) {
+      if (confirm("Are you sure?")) {
+        this.tasks = this.tasks.filter((task) => task.id !== taskId);
+      }
+    },
   },
   created() {
     this.tasks = [
@@ -49,8 +56,8 @@ export default {
 
 <style>
 body {
-min-height: 100vh;
-margin: 0;
+  min-height: 100vh;
+  margin: 0;
 }
 </style>
 

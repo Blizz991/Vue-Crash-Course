@@ -1,6 +1,6 @@
 <template>
   <section class="tasks">
-    <TodoTask :key="task.id" v-for="task in tasks" :task="task" />
+    <TodoTask @delete-task="$emit('delete-task', task.id)" :key="task.id" v-for="task in tasks" :task="task" />
   </section>
 </template>
 
@@ -16,5 +16,6 @@ export default {
   components: {
     TodoTask,
   },
+  emits: ['delete-task']
 };
 </script>
