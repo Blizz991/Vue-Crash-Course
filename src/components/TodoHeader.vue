@@ -2,8 +2,8 @@
   <header>
     <h1>{{ title }}</h1>
     <TodoButton text="Add task" color="green" />
-    <TodoButton text="Update task" color="blue" />
-    <TodoButton text="Delete task" color="red" />
+    <!-- <TodoButton text="Update task" color="blue" />
+    <TodoButton text="Delete task" color="red" /> -->
   </header> 
 </template>
 
